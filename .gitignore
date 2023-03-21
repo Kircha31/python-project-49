@@ -1,2 +1,4 @@
 #ignore dir  .venv
 .venv/
+#ignore file test.py (only test new package)
+test.py
