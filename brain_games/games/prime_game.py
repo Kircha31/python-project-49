@@ -9,7 +9,10 @@ def prime():
         list_number = choice(create_full_list())
         select = simple_number(list_number)
         answer = que_ans(list_number)
-        if select == answer:
+        if not check(answer):
+            print(post_response('lose', player, answer, 'yes/no'))
+            break
+        elif select == answer:
             print(post_response('right'))
             count -= 1
         else:

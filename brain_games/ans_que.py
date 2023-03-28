@@ -1,6 +1,5 @@
 from random import randint, choice
-from typing import List
-
+#from typing import List
 import prompt
 
 

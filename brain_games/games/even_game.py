@@ -7,7 +7,7 @@ def even():
     while count > 0:
         question = number()
         answer = que_ans(question)
-        if not answer in ['yes', 'no']:
+        if answer not in ['yes', 'no']:
             print(post_response('lose', player, answer, 'yes/no'))
             break
         elif question % 2 == 0:
