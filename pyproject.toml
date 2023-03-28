@@ -5,7 +5,7 @@ description = "brain games"
 authors = ["Kolomoets <kolomoets.kirill@yandex.ru>"]
 readme = "README.md"
 packages = [{include = "brain_games"}]
-classifiers = ["License :: Free For Home Use", "Topic :: Software Development :: Libraries :: Python Modules"]
+classifiers = ["Topic :: Software Development :: Libraries :: Python Modules"]
 repository = "https://github.com/Kircha31/python-project-49"
 
 [tool.poetry.dependencies]

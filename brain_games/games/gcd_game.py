@@ -1,4 +1,4 @@
-from brain_games.games.ans_que import *
+from brain_games.ans_que import *
 
 
 def gcd():
