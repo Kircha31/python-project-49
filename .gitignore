@@ -2,3 +2,5 @@
 .venv/
 #ignore file test.py (only test new package)
 test.py
+#ignore file choose_game.py
+brain_games/scripts/choose_games.py

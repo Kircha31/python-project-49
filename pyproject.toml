@@ -1,20 +1,27 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "brain games"
 authors = ["Kolomoets <kolomoets.kirill@yandex.ru>"]
 readme = "README.md"
 packages = [{include = "brain_games"}]
+classifiers = ["License :: Free For Home Use", "Topic :: Software Development :: Libraries :: Python Modules"]
+repository = "https://github.com/Kircha31/python-project-49"
 
 [tool.poetry.dependencies]
 python = "^3.11"
 prompt = "^0.4.1"
+simple-term-menu = "^1.6.1"
+art = "^5.9"
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
 brain-even = "brain_games.scripts.brain_even:main"
 brain-calc = "brain_games.scripts.brain_calc:main"
 brain-gcd = "brain_games.scripts.brain_gcd:main"
+brain-progression = "brain_games.scripts.brain_progression:main"
+brain-prime = "brain_games.scripts.brain_prime:main"
+choose-games = "brain_games.scripts.choose_games:main"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
