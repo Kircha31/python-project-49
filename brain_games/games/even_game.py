@@ -7,7 +7,7 @@ def even():
     while count > 0:
         question = number()
         answer = que_ans(question)
-        if not check(answer):
+        if not answer in ['yes', 'no']:
             print(post_response('lose', player, answer, 'yes/no'))
             break
         elif question % 2 == 0:
@@ -24,6 +24,6 @@ def even():
             else:
                 print(post_response('lose', player, answer, 'yes'))
                 break
-                
+    
     if count == 0:
         print(post_response('win', player))
