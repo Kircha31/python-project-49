@@ -8,8 +8,7 @@ def even():
         question = number()
         answer = que_ans(question)
         if not answer in ['yes', 'no']:
-            print(post_response('lose', player, answer, 'yes/no'))
-            break
+            exit(post_response('lose', player, answer, 'yes/no'))
         elif question % 2 == 0:
             if check(answer):
                 print(post_response('right'))
