@@ -10,7 +10,3 @@ brain-gcd(greatest common divisor of given numbers) - https://asciinema.org/a/57
 brain-progression(What number is missing in the progression) - https://asciinema.org/a/570444
 # Выявление простого числа 
 brain-prime(number is prime) - https://asciinema.org/a/570714
-# скрипт choose-game - меня для пользовтаеля для выбора игры 
-choose-games - select games
-# /games/ans_que
-ans_que - All methods are collected for work main scripts
