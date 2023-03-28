@@ -3,7 +3,7 @@ from random import choice
 
 
 def prime():
-    player = welcome_user(__file__[58:].strip('.py'))
+    player = welcome_user('prime_game')
     count = 3
     while count > 0:
         list_number = choice(create_full_list())

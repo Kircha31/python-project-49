@@ -2,7 +2,7 @@ from brain_games.games.ans_que import *
 
 
 def calc():
-    player = welcome_user(__file__[58:].strip('.py'))
+    player = welcome_user('calc_game')
     count = 3
     while count > 0:
         numb1 = number()
