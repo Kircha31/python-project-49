@@ -70,7 +70,7 @@ def check(answer):
     if answer == correct[0]:
         return True
     elif answer == correct[1]:
-        return True
+        return False
     else:
         return False
 

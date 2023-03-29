@@ -9,23 +9,20 @@ def even():
         question = number()
         answer = que_ans(question)
         if answer not in ['yes', 'no']:
-            print(post_response('lose', player, answer, 'yes/no'))
-            return False
+            sys.exit(post_response('lose', player, answer, 'yes/no'))
         elif question % 2 == 0:
             if check(answer):
                 print(post_response('right'))
                 count -= 1
             else:
-                print(post_response('lose', player, answer, 'no'))
-                return False
+                sys.exit(post_response('lose', player, answer, 'no'))
         else:
-            if check(answer):
+            if not check(answer):
                 print(post_response('right'))
                 count -= 1
             else:
-                print(post_response('lose', player, answer, 'yes'))
-                return False
+                sys.exit(post_response('lose', player, answer, 'yes'))
     
     if count == 0:
-        print(post_response('win', player))
-        return True
+        exit(post_response('win', player))
+        

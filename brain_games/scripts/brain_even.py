@@ -4,11 +4,7 @@ import sys
 def main():
     print('Welcome to the Brain Games!')
     
-    output = e.even()
-    if output:
-        sys.exit(0)
-    else:
-        sys.exit(0)
+    e.even()
 
 
 if __name__ == '__main__':
