@@ -26,7 +26,6 @@ def even():
             else:
                 ans_use = 'yes'
                 break
-    
     if count == 0:
         print(post_response('win', player))
     else:

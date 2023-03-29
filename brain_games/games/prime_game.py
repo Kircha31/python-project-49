@@ -11,7 +11,7 @@ def prime():
         list_number = choice(create_full_list())
         select = simple_number(list_number)
         answer = que_ans(list_number)
-        if not check(answer):
+        if answer not in ['yes', 'no']:
             break
         elif select == answer:
             print(post_response('right'))
