@@ -1,5 +1,6 @@
 from brain_games.ans_que import *
 from random import choice
+import sys
 
 
 def prime():
@@ -10,14 +11,15 @@ def prime():
         select = simple_number(list_number)
         answer = que_ans(list_number)
         if not check(answer):
-            print(post_response('lose', player, answer, 'yes/no'))
-            break
+            x = post_response('lose', player, answer, 'yes/no')
+            sys.exit(x)
         elif select == answer:
             print(post_response('right'))
             count -= 1
         else:
-            print(post_response('lose', player, answer, select))
-            break
+            x = post_response('lose', player, answer, select)
+            sys.exit(x)
     if count == 0:
-        print(post_response('win', player))
+        x = post_response('win', player)
+        sys.exit(x)
         
