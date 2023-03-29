@@ -10,6 +10,7 @@ def even():
         answer = que_ans(question)
         if answer not in ['yes', 'no']:
             quit(post_response('lose', player, answer, 'yes/no'))
+            sys.exit(os.EX_OK)
         elif question % 2 == 0:
             if check(answer):
                 print(post_response('right'))
