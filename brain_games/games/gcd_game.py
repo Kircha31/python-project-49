@@ -1,9 +1,9 @@
-from brain_games.ans_que import *
+from brain_games.ans_que import welcome_user, number, gcd_number, que_ans, post_response
 
 
 def gcd():
     global answer, total
-    player = welcome_user(__file__[58:].strip('.py'))
+    player = welcome_user('gcd_game')
     count = 3
     while count > 0:
         a, b = number(), number()
@@ -25,4 +25,3 @@ def gcd():
         print(post_response('win', player))
     else:
         print(post_response('lose', player, str(answer), str(total)))
-        

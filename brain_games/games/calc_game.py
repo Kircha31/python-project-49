@@ -1,4 +1,5 @@
-from brain_games.ans_que import *
+from brain_games.ans_que import welcome_user, number, que_ans, addition, post_response, subtraction, multiplication, \
+    sign
 
 
 def calc():

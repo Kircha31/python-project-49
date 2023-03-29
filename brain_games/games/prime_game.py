@@ -1,6 +1,5 @@
-from brain_games.ans_que import *
+from brain_games.ans_que import welcome_user, create_full_list, simple_number, que_ans, post_response
 from random import choice
-import sys
 
 
 def prime():

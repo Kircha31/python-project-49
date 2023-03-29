@@ -1,4 +1,4 @@
-from brain_games.ans_que import *
+from brain_games.ans_que import welcome_user, number, check, que_ans, post_response
 
 
 def even():
@@ -30,4 +30,3 @@ def even():
         print(post_response('win', player))
     else:
         print(post_response('lose', player, answer, ans_use))
-        

@@ -1,5 +1,5 @@
 from random import randint, choice
-import prompt
+from prompt import string
 
 
 # generate random number
@@ -10,7 +10,7 @@ def number():
 
 # Question formation and receiving answer
 def que_ans(numb):
-    answer = prompt.string(f"Question: {numb}\nYour answer: ")
+    answer = string(f"Question: {numb}\nYour answer: ")
     return answer
 
 
@@ -38,8 +38,9 @@ def subtraction(a, b):
 # Formation answer on the action user
 def post_response(status, player='', answer='', total=''):
     if status == 'lose':
-        return f"""'{answer}' is wrong answer ;(. Correct answer was {total}.
-Let's try again, {player}!"""
+        x = f"'{answer}' is wrong answer ;(. Correct answer was {total}."
+        y = f"Let's try again, {player}!"
+        return f"{x}\n{y}"
     elif status == 'right':
         return 'Correct!'
     else:
@@ -48,7 +49,7 @@ Let's try again, {player}!"""
 
 # Greet users
 def welcome_user(game):
-    name = prompt.string('May I have your name? ')
+    name = string('May I have your name? ')
     print(f'Hello, {name}!')
     if game == 'calc_game':
         print('What is the result of the expression?')
