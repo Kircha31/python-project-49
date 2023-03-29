@@ -13,7 +13,6 @@ def even():
             sys.exit(x)
         elif question % 2 == 0:
             if check(answer):
-           
                 print(post_response('right'))
                 count -= 1
             else:
@@ -28,4 +27,4 @@ def even():
                 sys.exit(x)
     
     if count == 0:
-        print(post_response('win', player))
+        exit(post_response('win', player))
