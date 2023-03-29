@@ -23,5 +23,4 @@ def gcd():
                 x = post_response('lose', player, str(answer), str(total))
                 sys.exit(x)
     if count == 0:
-        x = post_response('win', player)
-        sys.exit(x)
+        print(post_response('win', player))
