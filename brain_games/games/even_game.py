@@ -1,5 +1,5 @@
 from brain_games.ans_que import *
-import sys
+import sys, os
 
 
 def even():
@@ -9,7 +9,7 @@ def even():
         question = number()
         answer = que_ans(question)
         if answer not in ['yes', 'no']:
-            sys.exit(post_response('lose', player, answer, 'yes/no'))
+            quit(post_response('lose', player, answer, 'yes/no'))
         elif question % 2 == 0:
             if check(answer):
                 print(post_response('right'))
@@ -24,5 +24,6 @@ def even():
                 sys.exit(post_response('lose', player, answer, 'yes'))
     
     if count == 0:
-        exit(post_response('win', player))
+        print(post_response('win', player))
+        sys.exit(os.EX_OK)
         
