@@ -2,6 +2,7 @@ from brain_games.ans_que import *
 
 
 def even():
+    global answer
     player = welcome_user('even_game')
     count = 3
     ans_use = ''

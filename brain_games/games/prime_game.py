@@ -4,6 +4,7 @@ import sys
 
 
 def prime():
+    global answer, select
     player = welcome_user('prime_game')
     count = 3
     while count > 0:
@@ -11,13 +12,13 @@ def prime():
         select = simple_number(list_number)
         answer = que_ans(list_number)
         if not check(answer):
-            x = post_response('lose', player, answer, 'yes/no')
-            sys.exit(x)
+            break
         elif select == answer:
             print(post_response('right'))
             count -= 1
         else:
-            x = post_response('lose', player, answer, select)
-            sys.exit(x)
+            break
     if count == 0:
         print(post_response('win', player))
+    else:
+        print(post_response('lose', player, answer, select))

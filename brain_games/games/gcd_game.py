@@ -1,7 +1,8 @@
 from brain_games.ans_que import *
-import sys
+
 
 def gcd():
+    global answer, total
     player = welcome_user(__file__[58:].strip('.py'))
     count = 3
     while count > 0:
@@ -13,14 +14,15 @@ def gcd():
                 print(post_response('right'))
                 count -= 1
             else:
-                x = post_response('lose', player, str(answer), str(total))
-                sys.exit(x)
+                break
         else:
             if answer == total:
                 print(post_response('right'))
                 count -= 1
             else:
-                x = post_response('lose', player, str(answer), str(total))
-                sys.exit(x)
+                break
     if count == 0:
         print(post_response('win', player))
+    else:
+        print(post_response('lose', player, str(answer), str(total)))
+        
