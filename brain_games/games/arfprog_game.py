@@ -1,5 +1,7 @@
-from brain_games.ans_que import welcome_user, create_list, que_ans, post_response
+from brain_games.ans_que import que_ans, post_response
+from brain_games.ans_que import welcome_user, create_list
 from random import choice
+
 
 def progressive():
     global answer, total

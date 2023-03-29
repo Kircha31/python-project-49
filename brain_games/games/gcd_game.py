@@ -1,4 +1,5 @@
-from brain_games.ans_que import welcome_user, number, gcd_number, que_ans, post_response
+from brain_games.ans_que import gcd_number, que_ans, post_response
+from brain_games.ans_que import welcome_user, number
 
 
 def gcd():

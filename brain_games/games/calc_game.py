@@ -1,5 +1,17 @@
-from brain_games.ans_que import welcome_user, number, que_ans, addition, post_response, subtraction, multiplication, \
-    sign
+from brain_games.ans_que import post_response, subtraction, multiplication, sign
+from brain_games.ans_que import welcome_user, number, que_ans, addition
+
+
+def compare(numb1, numb2, symbol):
+    if symbol == '+':
+        total = addition(numb1, numb2)
+        return total
+    elif symbol == '-':
+        total = subtraction(numb1, numb2)
+        return total
+    else:
+        total = multiplication(numb1, numb2)
+        return total
 
 
 def calc():
@@ -8,28 +20,13 @@ def calc():
     count = 3
     while count > 0:
         numb1, numb2, symbol = number(), number(), sign()
-        answer = que_ans(f'{numb1} {symbol} {numb2}')
-        if symbol == '+':
-            total = addition(numb1, numb2)
-            if total == int(answer):
-                print(post_response('right'))
-                count -= 1
-            else:
-                break
-        elif symbol == '-':
-            total = subtraction(numb1, numb2)
-            if total == int(answer):
-                print(post_response('right'))
-                count -= 1
-            else:
-                break
+        answer = int(que_ans(f'{numb1} {symbol} {numb2}'))
+        total = compare(numb1, numb2, symbol)
+        if total == answer:
+            print(post_response('right'))
+            count -= 1
         else:
-            total = multiplication(numb1, numb2)
-            if total == int(answer):
-                print(post_response('right'))
-                count -= 1
-            else:
-                break
+            break
     if count == 0:
         print(post_response('win', player))
     else:
