@@ -8,6 +8,8 @@ brain_games/scripts/choose_games.py
 dist/
 #ignore dir pycache
 brain_games/__pycache__
+brain_games/games/__pycache__
+brain_games/scripts/__pycache__
 #ignore .DS_Store
 .DS_Store
 #ignore .idea
