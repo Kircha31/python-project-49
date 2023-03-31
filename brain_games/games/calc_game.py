@@ -18,7 +18,7 @@ def is_winner():
         numb1, numb2, = number(), number()
         symbol = choice(['*', '+', '-'])
         total = str(action[symbol](numb1, numb2))
-        if logic.correct_answer(f'{numb1}{symbol}{numb2}', total):
+        if logic.correct_answer(f'{numb1} {symbol} {numb2}', total):
             count -= 1
         else:
             break
