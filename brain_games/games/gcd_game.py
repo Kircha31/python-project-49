@@ -1,28 +1,31 @@
-from brain_games.ans_que import gcd_number, que_ans, post_response
-from brain_games.ans_que import welcome_user, number
+from brain_games.ans_que import number
+from brain_games.games import logic
 
 
-def gcd():
-    global answer, total
-    player = welcome_user('gcd_game')
+# Find max divisor number
+def gcd_number(numb1, numb2):
+    total = []
+    if numb1 > numb2:
+        temp = numb2
+    else:
+        temp = numb1
+    for i in range(1, temp + 1):
+        if numb1 % i == 0 and numb2 % i == 0:
+            total.append(i)
+    return max(total)
+
+
+def is_winner():
+    print("Find the greatest common divisor of given numbers.")
     count = 3
     while count > 0:
         a, b = number(), number()
-        answer = int(que_ans(f'{a} {b}'))
-        total = gcd_number(a, b)
-        if a == 0 or b == 0:
-            if answer == a or answer == b:
-                print(post_response('right'))
-                count -= 1
-            else:
-                break
+        total = str(gcd_number(a, b))
+        if logic.correct_answer(f'{a} {b}', total):
+            count -= 1
         else:
-            if answer == total:
-                print(post_response('right'))
-                count -= 1
-            else:
-                break
+            break
     if count == 0:
-        print(post_response('win', player))
+        return True
     else:
-        print(post_response('lose', player, str(answer), str(total)))
+        return False

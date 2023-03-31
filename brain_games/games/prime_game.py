@@ -1,24 +1,29 @@
-from brain_games.ans_que import simple_number, que_ans, post_response
-from brain_games.ans_que import welcome_user, create_full_list
 from random import choice
+from brain_games.games import logic
 
 
-def prime():
-    global answer, select
-    player = welcome_user('prime_game')
+def simple_number(numb):
+    k = 0
+    for i in range(2, numb):
+        if numb % i == 0:
+            k += 1
+    if k == 0:
+        return 'yes'
+    else:
+        return 'no'
+
+
+def is_winner():
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     count = 3
     while count > 0:
-        list_number = choice(create_full_list())
-        select = simple_number(list_number)
-        answer = que_ans(list_number)
-        if answer not in ['yes', 'no']:
-            break
-        elif select == answer:
-            print(post_response('right'))
+        ran_numb = choice([x for x in range(1, 100)])
+        correct = simple_number(ran_numb)
+        if logic.correct_answer(ran_numb, correct):
             count -= 1
         else:
             break
     if count == 0:
-        print(post_response('win', player))
+        return True
     else:
-        print(post_response('lose', player, answer, select))
+        return False

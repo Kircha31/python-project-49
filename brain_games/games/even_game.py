@@ -1,32 +1,22 @@
-from brain_games.ans_que import que_ans, post_response
-from brain_games.ans_que import welcome_user, number
+from brain_games.games import logic
+from brain_games.ans_que import number
 
 
 def even_numb(numb):
-    if numb % 2 == 0:
-        return 'yes'
-    else:
-        return 'no'
+    return 'yes' if numb % 2 == 0 else 'no'
 
 
-def even():
-    global answer
-    player = welcome_user('even_game')
+def is_winner():
+    print('Answer "yes" if the number is even, otherwise answer "no".')
     count = 3
-    ans_use = 'yes'
     while count > 0:
         question = number()
-        answer = que_ans(question)
-        if answer not in ['yes', 'no']:
-            ans_use = 'yes/no'
-            break
-        elif even_numb(question) == answer:
-            print(post_response('right'))
+        total = even_numb(question)
+        if logic.correct_answer(question, total):
             count -= 1
         else:
-            ans_use = even_numb(question)
             break
     if count == 0:
-        print(post_response('win', player))
+        return True
     else:
-        print(post_response('lose', player, answer, ans_use))
+        return False

@@ -1,33 +1,28 @@
-from brain_games.ans_que import post_response, subtraction, multiplication, sign
-from brain_games.ans_que import welcome_user, number, que_ans, addition
+import operator
+from brain_games.ans_que import number
+from brain_games.games import logic
+from random import choice
 
 
-def compare(numb1, numb2, symbol):
-    if symbol == '+':
-        total = addition(numb1, numb2)
-        return total
-    elif symbol == '-':
-        total = subtraction(numb1, numb2)
-        return total
-    else:
-        total = multiplication(numb1, numb2)
-        return total
+action = {
+    '+': operator.add,
+    '-': operator.sub,
+    '*': operator.mul,
+}
 
 
-def calc():
-    global answer, total
-    player = welcome_user('calc_game')
+def is_winner():
+    print('What is the result of the expression?')
     count = 3
     while count > 0:
-        numb1, numb2, symbol = number(), number(), sign()
-        answer = int(que_ans(f'{numb1} {symbol} {numb2}'))
-        total = compare(numb1, numb2, symbol)
-        if total == answer:
-            print(post_response('right'))
+        numb1, numb2, = number(), number()
+        symbol = choice(['*', '+', '-'])
+        total = str(action[symbol](numb1, numb2))
+        if logic.correct_answer(f'{numb1}{symbol}{numb2}', total):
             count -= 1
         else:
             break
     if count == 0:
-        print(post_response('win', player))
+        return True
     else:
-        print(post_response('lose', player, answer, str(total)))
+        return False

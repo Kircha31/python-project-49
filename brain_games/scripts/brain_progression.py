@@ -1,9 +1,9 @@
-from brain_games.games.arfprog_game import progressive
+from brain_games.start_game import start_game
+import brain_games.games.progression_game
 
 
 def main():
-    print('Welcome to the Brain Games!')
-    progressive()
+    start_game(brain_games.games.progression_game)
 
 
 if __name__ == '__main__':
