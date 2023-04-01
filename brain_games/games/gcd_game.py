@@ -20,8 +20,8 @@ def is_winner():
     count = 3
     while count > 0:
         a, b = number(), number()
-        total = str(gcd_number(a, b))
-        if logic.correct_answer(f'{a} {b}', total):
+        total = gcd_number(a, b)
+        if logic.correct_answer(f'{a} {b}', str(total)):
             count -= 1
         else:
             break
