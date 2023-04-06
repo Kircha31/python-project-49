@@ -5,7 +5,7 @@ test.py
 #ignore file choose_game.py
 brain_games/scripts/choose_games.py
 # ignore dist
-dist/
+#dist/
 #ignore dir pycache
 brain_games/__pycache__
 brain_games/games/__pycache__
