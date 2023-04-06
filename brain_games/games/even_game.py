@@ -1,22 +1,17 @@
-from brain_games.games import logic
-from brain_games.ans_que import number
+from random import randint
 
 
-def even_numb(numb):
-    return 'yes' if numb % 2 == 0 else 'no'
+RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-def is_winner():
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    count = 3
-    while count > 0:
-        question = number()
-        total = even_numb(question)
-        if logic.correct_answer(question, total):
-            count -= 1
-        else:
-            break
-    if count == 0:
-        return True
-    else:
-        return False
+def get_question_and_right_answer():
+    numb = number()
+    total = 'yes' if numb % 2 == 0 else 'no'
+    question = f"Question: {numb}"
+    return question, total
+
+
+def number():
+    question = randint(0, 100)
+    return question
+

@@ -1,5 +1,7 @@
 from random import choice, randint
-from brain_games.games import logic
+
+
+RULES = 'What number is missing in the progression?'
 
 
 # create list for arifmetik progression
@@ -15,17 +17,8 @@ def select_number(list_str, total):
     return ' '.join(str(x) for x in list_str)
 
 
-def is_winner():
-    print('What number is missing in the progression?')
-    count = 3
-    while count > 0:
-        list_prog = create_list()
-        total = list_prog[choice(range(len(list_prog)))]
-        if logic.correct_answer(select_number(list_prog, total), str(total)):
-            count -= 1
-        else:
-            break
-    if count == 0:
-        return True
-    else:
-        return False
+def get_question_and_right_answer():
+    list_prog = create_list()
+    total = list_prog[choice(range(len(list_prog)))]
+    question = f"Question: {select_number(list_prog,total)}"
+    return question, str(total)

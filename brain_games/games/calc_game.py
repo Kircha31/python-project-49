@@ -1,8 +1,8 @@
 import operator
-from brain_games.ans_que import number
-from brain_games.games import logic
-from random import choice
+from random import choice, randint
 
+
+RULES = 'What is the result of the expression?'
 
 action = {
     '+': operator.add,
@@ -11,18 +11,14 @@ action = {
 }
 
 
-def is_winner():
-    print('What is the result of the expression?')
-    count = 3
-    while count > 0:
-        numb1, numb2, = number(), number()
-        symbol = choice(['*', '+', '-'])
-        total = str(action[symbol](numb1, numb2))
-        if logic.correct_answer(f'{numb1} {symbol} {numb2}', total):
-            count -= 1
-        else:
-            break
-    if count == 0:
-        return True
-    else:
-        return False
+def get_question_and_right_answer():
+    numb1, numb2, = number(), number()
+    symbol = choice(['*', '+', '-'])
+    total = str(action[symbol](numb1, numb2))
+    question = f"Question: {numb1} {symbol} {numb2}"
+    return question, total
+
+
+def number():
+    question = randint(0, 100)
+    return question

@@ -1,8 +1,9 @@
-from brain_games.ans_que import number
-from brain_games.games import logic
+from random import randint
 
 
-# Find max divisor number
+RULES = "Find the greatest common divisor of given numbers."
+
+
 def gcd_number(numb1, numb2):
     total = []
     if numb1 > numb2:
@@ -15,17 +16,13 @@ def gcd_number(numb1, numb2):
     return max(total)
 
 
-def is_winner():
-    print("Find the greatest common divisor of given numbers.")
-    count = 3
-    while count > 0:
-        a, b = number(), number()
-        total = gcd_number(a, b)
-        if logic.correct_answer(f'{a} {b}', str(total)):
-            count -= 1
-        else:
-            break
-    if count == 0:
-        return True
-    else:
-        return False
+def get_question_and_right_answer():
+    numb1, numb2 = number(), number()
+    total = gcd_number(numb1, numb2)
+    question = f"Question: {numb1} {numb2}"
+    return question, str(total)
+
+
+def number():
+    question = randint(0, 100)
+    return question

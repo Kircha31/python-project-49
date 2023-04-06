@@ -1,5 +1,7 @@
 from random import choice
-from brain_games.games import logic
+
+
+RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def simple_number(numb):
@@ -13,17 +15,8 @@ def simple_number(numb):
         return 'no'
 
 
-def is_winner():
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    count = 3
-    while count > 0:
-        ran_numb = choice([x for x in range(1, 100)])
-        correct = simple_number(ran_numb)
-        if logic.correct_answer(ran_numb, correct):
-            count -= 1
-        else:
-            break
-    if count == 0:
-        return True
-    else:
-        return False
+def get_question_and_right_answer():
+    ran_numb = choice([x for x in range(1, 100)])
+    correct = simple_number(ran_numb)
+    question = f"Question: {ran_numb}"
+    return question, correct
