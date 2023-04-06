@@ -14,4 +14,3 @@ def get_question_and_right_answer():
 def number():
     question = randint(0, 100)
     return question
-
