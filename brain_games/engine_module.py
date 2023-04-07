@@ -1,5 +1,11 @@
 from prompt import string
-from brain_games.start_game import correct_answer
+
+
+def correct_answer(user_answer, right_answer):
+    if right_answer == user_answer:
+        return True
+    else:
+        return False
 
 
 def engine(game_module):
@@ -10,7 +16,7 @@ def engine(game_module):
     count = 0
     for _ in range(3):
         question, right_answer = game_module.get_question_and_right_answer()
-        user_answer = string(f'{question}\nYour answer: ')
+        user_answer = string(f'Question: {question}\nYour answer: ')
         if correct_answer(user_answer, right_answer):
             print('Correct!')
             count += 1

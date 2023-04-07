@@ -12,13 +12,7 @@ action = {
 
 
 def get_question_and_right_answer():
-    numb1, numb2, = number(), number()
+    numb1, numb2, = randint(0, 100), randint(0, 100)
     symbol = choice(['*', '+', '-'])
     total = str(action[symbol](numb1, numb2))
-    question = f"Question: {numb1} {symbol} {numb2}"
-    return question, total
-
-
-def number():
-    question = randint(0, 100)
-    return question
+    return f"{numb1} {symbol} {numb2}", total

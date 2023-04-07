@@ -20,5 +20,4 @@ def select_number(list_str, total):
 def get_question_and_right_answer():
     list_prog = create_list()
     total = list_prog[choice(range(len(list_prog)))]
-    question = f"Question: {select_number(list_prog,total)}"
-    return question, str(total)
+    return select_number(list_prog, total), str(total)

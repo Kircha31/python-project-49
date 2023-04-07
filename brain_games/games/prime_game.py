@@ -18,5 +18,4 @@ def simple_number(numb):
 def get_question_and_right_answer():
     ran_numb = choice([x for x in range(1, 100)])
     correct = simple_number(ran_numb)
-    question = f"Question: {ran_numb}"
-    return question, correct
+    return ran_numb, correct
