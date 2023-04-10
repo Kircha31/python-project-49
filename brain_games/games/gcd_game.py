@@ -4,7 +4,7 @@ from random import randint
 RULES = "Find the greatest common divisor of given numbers."
 
 
-def gcd_number(numb1, numb2):
+def get_general_divisor_number(numb1, numb2):
     total = []
     if numb1 > numb2:
         temp = numb2
@@ -18,5 +18,5 @@ def gcd_number(numb1, numb2):
 
 def get_question_and_right_answer():
     numb1, numb2 = randint(0, 100), randint(0, 100)
-    total = gcd_number(numb1, numb2)
+    total = get_general_divisor_number(numb1, numb2)
     return f"{numb1} {numb2}", str(total)

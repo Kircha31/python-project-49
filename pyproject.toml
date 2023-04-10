@@ -11,8 +11,6 @@ repository = "https://github.com/Kircha31/python-project-49"
 [tool.poetry.dependencies]
 python = "^3.11"
 prompt = "^0.4.1"
-simple-term-menu = "^1.6.1"
-art = "^5.9"
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
